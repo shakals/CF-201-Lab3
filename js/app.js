@@ -35,68 +35,64 @@ function aboutMeFunction(question, correctAnswer1, correctAnswer2) {
   }
 }
 
+function incrementNumCorrectAnswers(result, numCorrectAnswers) {
+	if (result === true) {
+	  numCorrectAnswers++;
+}
+console.log('Number of correct answers incremented to: ',numCorrectAnswers);
+return numCorrectAnswers;
+}
+
+function incrementNumQuestions(numQuestions) {
+numQuestions++;
+console.log('Number of Questions incremented to: ',numQuestions);
+return numQuestions;
+}
+
 // Question 1
 question = 'My nickname is Danny. Yes or No?';
 correctAnswer1 = 'Y';
 correctAnswer2 = 'YES';
 result = aboutMeFunction(question, correctAnswer1, correctAnswer2, numQuestions, numCorrectAnswers);
-
-numQuestions++;
-if (result === true) {
-  numCorrectAnswers++;
-}
+numQuestions = incrementNumQuestions(numQuestions);
+numCorrectAnswers = incrementNumCorrectAnswers(result, numCorrectAnswers);
 
 // Question 2
 question = 'I am five foot tall. Yes or No?';
 correctAnswer1 = 'N';
 correctAnswer2 = 'NO';
 result = aboutMeFunction(question, correctAnswer1, correctAnswer2, numQuestions, numCorrectAnswers);
-
-numQuestions++;
-if (result === true) {
-  numCorrectAnswers++;
-}
+numQuestions = incrementNumQuestions(numQuestions);
+numCorrectAnswers = incrementNumCorrectAnswers(result, numCorrectAnswers);
 
 // Question 3
 question = 'Kill Bill is my all time favorite movie. Yes or No?';
 correctAnswer1 = 'Y';
 correctAnswer2 = 'YES';
 result = aboutMeFunction(question, correctAnswer1, correctAnswer2, numQuestions, numCorrectAnswers);
-
-numQuestions++;
-if (result === true) {
-  numCorrectAnswers++;
-}
+numQuestions = incrementNumQuestions(numQuestions);
+numCorrectAnswers = incrementNumCorrectAnswers(result, numCorrectAnswers);
 
 // Question 4
 question = 'Among recent music artists, my favorite singer is Ariana Grande. Yes or No?';
 correctAnswer1 = 'N';
 correctAnswer2 = 'NO';
 result = aboutMeFunction(question, correctAnswer1, correctAnswer2, numQuestions, numCorrectAnswers);
-
-numQuestions++;
-if (result === true) {
-  numCorrectAnswers++;
-}
+numQuestions = incrementNumQuestions(numQuestions);
+numCorrectAnswers = incrementNumCorrectAnswers(result, numCorrectAnswers);
 
 // Question 5
 question = 'I have worked on the same technology for twelve years. Yes or No?';
 correctAnswer1 = 'Y';
 correctAnswer2 = 'YES';
 result = aboutMeFunction(question, correctAnswer1, correctAnswer2, numQuestions, numCorrectAnswers);
-
-numQuestions++;
-if (result === true) {
-  numCorrectAnswers++;
-}
-
-
-
+numQuestions = incrementNumQuestions(numQuestions);
+numCorrectAnswers = incrementNumCorrectAnswers(result, numCorrectAnswers);
 
 //6th question -- favorite number guessing game
 var guessNumber = 0;
 var favoriteRandomNumber = 0;
-numQuestions++;
+numQuestions = incrementNumQuestions(numQuestions);
 favoriteRandomNumber = Math.floor(Math.random() * 10) + 1;
 console.log('My favorite number is: ', favoriteRandomNumber);
 
@@ -112,7 +108,7 @@ for (var i = 4; i >= 1; i--) {
     else if (favoriteRandomNumber < guessNumber) {
       alert('Your guess is too high. You have ' + j + ' attempt(s) left. ');
     }
-    else if (favoriteRandomNumber === guessNumber) {
+    else if (parseInt(favoriteRandomNumber) === parseInt(guessNumber)) {
       alert('Yay!!! Your guess is correct!');
       //Increment correct answer counter
       numCorrectAnswers++;
@@ -129,7 +125,7 @@ for (var i = 4; i >= 1; i--) {
 }
 
 //7th question - Guess a state lived besides Washington
-numQuestions++;
+numQuestions = incrementNumQuestions(numQuestions);
 
 for (var k = 6; k > 0; k--) {
   var guessState = prompt('Guess a state where I lived besides Washington. Enter the full name of the state. You have ' + k + ' attempts left to guess correctly.');
